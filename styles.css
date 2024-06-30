@@ -868,6 +868,10 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.\[ui\:\&\FFFD\FFFD\F 6\FFFDq\]{
+  ui: &��6�q;
+}
+
 :root {
   --Orange: hsl(26, 100%, 55%);
   --Paleorange: hsl(25, 100%, 94%);
