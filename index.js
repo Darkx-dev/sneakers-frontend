@@ -44,10 +44,10 @@ viewerControlButtons.forEach((button) => {
   button.addEventListener("click", () => {
     let activeSlideNumber = Number(currentActiveSlide.split("").pop());
     if (button.id === "next") {
-      if (activeSlideNumber === 4) return;
+      if (activeSlideNumber === 4) return changeImage(1);
       changeImage(activeSlideNumber + 1);
     } else if (button.id === "previous") {
-      if (activeSlideNumber === 1) return;
+      if (activeSlideNumber === 1) return changeImage(4);
       changeImage(activeSlideNumber - 1);
     }
   });
