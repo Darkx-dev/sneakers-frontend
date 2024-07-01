@@ -10,7 +10,7 @@
   </head>
   <body class="lg:px-28">
     <nav
-      class="flex h-[100px] w-full items-center border-b-2 max-lg:px-5 max-sm:h-[70px]"
+      class="relative flex h-[100px] w-full items-center border-b-2 max-lg:px-5 max-sm:h-[70px]"
       id="navbar"
     >
       <div class="relative mr-4 sm:hidden">
@@ -98,9 +98,20 @@
         </ul>
       </div>
       <div class="ml-auto flex items-center gap-8 max-lg:gap-5" id="user">
-        <a href="#" class="cart">
+        <label class="cursor-pointer" for="cart">
           <img src="images/icon-cart.svg" alt="Cart" />
-        </a>
+          <input type="checkbox" id="cart" class="peer/cart" hidden />
+          <div
+            class="absolute right-0 z-50 hidden w-[320px] translate-y-8 flex-col shadow-2xl peer-checked/cart:flex max-md:w-full max-md:px-2"
+          >
+            <div class="rounded-b-xl bg-white max-md:rounded-xl">
+              <h3 class="px-5 py-4 font-bold">Cart</h3>
+              <div class="flex min-h-36 items-center justify-center border-t-2">
+                <h3>Your cart is empty.</h3>
+              </div>
+            </div>
+          </div>
+        </label>
         <a href="#" id="avatar">
           <img
             src="images/image-avatar.png"
@@ -137,7 +148,7 @@
             alt="product image"
           />
         </label>
-        <input type="checkbox" id="viewer-toggle" class="peer" hidden />
+        <input type="checkbox" id="viewer-toggle" class="peer/nav" hidden />
         <div
           class="flex max-w-[400px] justify-between pt-4 max-sm:hidden"
           id="slides__tray"
@@ -171,7 +182,7 @@
         <!-- Viewer -->
 
         <div
-          class="absolute left-0 top-0 z-50 hidden h-full w-full flex-col items-center justify-center bg-[#000000b0] peer-checked:flex peer-checked:max-sm:hidden"
+          class="absolute left-0 top-0 z-50 hidden h-full w-full flex-col items-center justify-center bg-[#000000b0] peer-checked/nav:flex peer-checked/nav:max-sm:hidden"
           id="slide__viewer"
         >
           <label

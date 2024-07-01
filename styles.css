@@ -576,6 +576,10 @@ video {
   left: 0px;
 }
 
+.right-0{
+  right: 0px;
+}
+
 .top-0{
   top: 0px;
 }
@@ -668,6 +672,18 @@ video {
   height: 100%;
 }
 
+.min-h-36{
+  min-height: 9rem;
+}
+
+.min-h-28{
+  min-height: 7rem;
+}
+
+.min-h-3{
+  min-height: 0.75rem;
+}
+
 .w-10{
   width: 2.5rem;
 }
@@ -678,6 +694,10 @@ video {
 
 .w-\[250px\]{
   width: 250px;
+}
+
+.w-\[320px\]{
+  width: 320px;
 }
 
 .w-\[400px\]{
@@ -718,6 +738,36 @@ video {
 
 .translate-x-5{
   --tw-translate-x: 1.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-y-8{
+  --tw-translate-y: 2rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-1\/2{
+  --tw-translate-x: 50%;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-1{
+  --tw-translate-x: 0.25rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-\[20pz\]{
+  --tw-translate-x: 20pz;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-\[20px\]{
+  --tw-translate-x: 20px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.translate-x-\[60px\]{
+  --tw-translate-x: 60px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
@@ -785,8 +835,21 @@ video {
   border-radius: 0.5rem;
 }
 
+.rounded-xl{
+  border-radius: 0.75rem;
+}
+
+.rounded-b-xl{
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
 .border-b-2{
   border-bottom-width: 2px;
+}
+
+.border-t-2{
+  border-top-width: 2px;
 }
 
 .bg-\[\#000000b0\]{
@@ -831,6 +894,11 @@ video {
   padding-right: 0.75rem;
 }
 
+.px-5{
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
 .px-6{
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -844,6 +912,11 @@ video {
 .py-3{
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .pt-2{
@@ -930,6 +1003,12 @@ video {
   text-decoration-line: line-through;
 }
 
+.shadow-2xl{
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .shadow-lg{
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
@@ -1008,7 +1087,11 @@ div.active::before {
   color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
-.peer:checked ~ .peer-checked\:flex{
+.peer\/cart:checked ~ .peer-checked\/cart\:flex{
+  display: flex;
+}
+
+.peer\/nav:checked ~ .peer-checked\/nav\:flex{
   display: flex;
 }
 
@@ -1061,8 +1144,21 @@ div.active::before {
     display: flex;
   }
 
+  .max-md\:w-full{
+    width: 100%;
+  }
+
   .max-md\:max-w-full{
     max-width: 100%;
+  }
+
+  .max-md\:rounded-xl{
+    border-radius: 0.75rem;
+  }
+
+  .max-md\:px-2{
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
   }
 
   .max-md\:text-3xl{
@@ -1113,7 +1209,7 @@ div.active::before {
     padding-bottom: 2.5rem;
   }
 
-  .peer:checked ~ .peer-checked\:max-sm\:hidden{
+  .peer\/nav:checked ~ .peer-checked\/nav\:max-sm\:hidden{
     display: none;
   }
 }
