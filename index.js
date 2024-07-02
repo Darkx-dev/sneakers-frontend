@@ -104,7 +104,8 @@ addToCardButton.addEventListener("click", () => {
 
   let isInCart = cart.childElementCount > 2;
   if (isInCart) {
-    if (cart.querySelector("h3#item__name").innerText === product.title) {
+    if (cart.querySelector("h3#item__name").textContent.toString() === product.title) {
+      console.log("Already in cart");
       let itemCountSpan = document.querySelector("#item__count");
       let cartPriceSpan = document.querySelector("#cart__price");
       itemCountSpan.innerText = productQuantity;

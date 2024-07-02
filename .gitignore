@@ -1,7 +1,6 @@
 *.sketch 
 *.fig
 *.xd
-design 
 index.template.html
 README-template.md
 style-guide.md
