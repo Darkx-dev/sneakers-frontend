@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.min.css" /> -->
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="lg:px-28">
+  <body class="md:px-10 xl:px-28">
     <nav
       class="relative flex h-[100px] w-full items-center border-b-2 max-lg:px-5 max-sm:h-[70px]"
       id="navbar"
@@ -76,9 +76,9 @@
       <a href="/" id="logo">
         <img src="images/logo.svg" alt="Sneakers Logo" />
       </a>
-      <div class="max-sm:hidden" id="routes">
+      <div class="flex h-full items-center max-sm:hidden" id="routes">
         <ul
-          class="ml-10 flex items-center gap-5 text-[var(--Darkgrayishblue)] max-md:ml-4"
+          class="ml-10 flex h-full gap-5 text-[var(--Darkgrayishblue)] transition-all *:relative *:flex *:h-full *:items-center hover:*:text-black max-md:ml-4"
         >
           <li>
             <a href="#collections">Collections</a>
@@ -97,21 +97,27 @@
           </li>
         </ul>
       </div>
+
       <div class="ml-auto flex items-center gap-8 max-lg:gap-5" id="user">
-        <label class="cursor-pointer" for="cart">
-          <img src="images/icon-cart.svg" alt="Cart" />
+        <div id="cart__container">
+          <label
+            class="block cursor-pointer hover:brightness-200 hover:contrast-200 hover:invert"
+            for="cart"
+          >
+            <img src="images/icon-cart.svg" alt="Cart" />
+          </label>
           <input type="checkbox" id="cart" class="peer/cart" hidden />
           <div
-            class="absolute right-0 z-50 hidden w-[320px] translate-y-8 flex-col shadow-2xl peer-checked/cart:flex max-md:w-full max-md:px-2"
+            class="absolute right-0 z-50 hidden w-[320px] translate-y-8 flex-col peer-checked/cart:flex max-md:w-full max-md:px-2"
           >
-            <div class="rounded-b-xl bg-white max-md:rounded-xl">
-              <h3 class="px-5 py-4 font-bold">Cart</h3>
-              <div class="flex min-h-36 items-center justify-center border-t-2">
+            <div class="rounded-b-xl bg-white shadow-xl max-md:rounded-xl">
+              <h3 class="px-5 pb-5 pt-2 font-bold">Cart</h3>
+              <div class="flex min-h-44 items-center justify-center border-t-2">
                 <h3>Your cart is empty.</h3>
               </div>
             </div>
           </div>
-        </label>
+        </div>
         <a href="#" id="avatar">
           <img
             src="images/image-avatar.png"
@@ -135,11 +141,41 @@
           <div
             class="controls absolute hidden h-full w-full items-center justify-between max-sm:flex"
           >
-            <button class="ml-2 h-10 w-10 rounded-full bg-white" id="previous">
-              <img class="m-auto" src="images/icon-previous.svg" alt="<" />
+            <button
+              class="group ml-2 h-10 w-10 rounded-full bg-white"
+              id="previous"
+            >
+              <svg
+                class="m-auto stroke-black group-hover:stroke-[var(--Orange)]"
+                width="12"
+                height="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11 1 3 9l8 8"
+                  stroke-width="3"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </button>
-            <button class="mr-2 h-10 w-10 rounded-full bg-white" id="next">
-              <img class="m-auto" src="images/icon-next.svg" alt=">" />
+            <button
+              class="group mr-2 h-10 w-10 rounded-full bg-white"
+              id="next"
+            >
+              <svg
+                class="m-auto stroke-black group-hover:stroke-[var(--Orange)]"
+                width="13"
+                height="18"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="m2 1 8 8-8 8"
+                  stroke-width="3"
+                  fill="none"
+                  fill-rule="evenodd"
+                />
+              </svg>
             </button>
           </div>
           <img
@@ -150,11 +186,11 @@
         </label>
         <input type="checkbox" id="viewer-toggle" class="peer/nav" hidden />
         <div
-          class="flex max-w-[400px] justify-between pt-4 max-sm:hidden"
+          class="hover:*:activeOverlayMedium flex max-w-[400px] justify-between pt-4 *:relative max-sm:hidden"
           id="slides__tray"
         >
           <div
-            class="active max-w-[80px] cursor-pointer overflow-hidden rounded-lg"
+            class="activeSlide activeOverlay max-w-[80px] cursor-pointer overflow-hidden rounded-lg"
             id="slide__1"
           >
             <img src="images/image-product-1-thumbnail.jpg" alt="slide 1" />
@@ -189,7 +225,8 @@
             class="block w-full max-w-[400px] cursor-pointer"
             for="viewer-toggle"
           >
-            <span class="ml-auto block w-fit text-3xl text-[var(--Orange)]"
+            <span
+              class="ml-auto block w-fit text-4xl text-white transition-colors hover:text-[var(--Orange)]"
               >×</span
             >
           </label>
@@ -198,16 +235,40 @@
               class="controls absolute flex h-full w-full items-center justify-between"
             >
               <button
-                class="h-10 w-10 -translate-x-5 rounded-full bg-white"
+                class="group h-10 w-10 -translate-x-5 rounded-full bg-white"
                 id="previous"
               >
-                <img class="m-auto" src="images/icon-previous.svg" alt="<" />
+                <svg
+                  class="m-auto stroke-black group-hover:stroke-[var(--Orange)]"
+                  width="12"
+                  height="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11 1 3 9l8 8"
+                    stroke-width="3"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </button>
               <button
-                class="h-10 w-10 translate-x-5 rounded-full bg-white"
+                class="group h-10 w-10 translate-x-5 rounded-full bg-white"
                 id="next"
               >
-                <img class="m-auto" src="images/icon-next.svg" alt=">" />
+                <svg
+                  class="m-auto stroke-black group-hover:stroke-[var(--Orange)]"
+                  width="13"
+                  height="18"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="m2 1 8 8-8 8"
+                    stroke-width="3"
+                    fill="none"
+                    fill-rule="evenodd"
+                  />
+                </svg>
               </button>
             </div>
             <img
@@ -217,11 +278,11 @@
             />
           </div>
           <div
-            class="flex w-[400px] justify-between pt-4 max-sm:hidden"
+            class="hover:*:activeOverlayMedium flex w-[400px] justify-between pt-4 *:relative max-sm:hidden"
             id="slides__tray"
           >
             <div
-              class="active max-w-[80px] cursor-pointer overflow-hidden rounded-lg"
+              class="activeSlide activeOverlay max-w-[80px] cursor-pointer overflow-hidden rounded-lg"
               id="slide__1"
             >
               <img src="images/image-product-1-thumbnail.jpg" alt="slide 1" />
@@ -290,20 +351,20 @@
         </h2>
         <div class="mt-4 flex gap-5 max-sm:flex-col" id="buttons">
           <div
-            class="flex w-[250px] items-center justify-between bg-[var(--Lightgrayishblue)] px-2 shadow-sm max-sm:w-full"
+            class="flex w-[250px] items-center justify-between bg-[var(--Lightgrayishblue)] px-2 shadow-sm *:h-full *:w-full *:py-3 max-sm:w-full"
             id="quantity"
           >
-            <button class="h-full w-full py-3" id="minus">
+            <button class="hover:activeOverlayMedium relative" id="minus">
               <img src="images/icon-minus.svg" alt="-" />
             </button>
-            <span class="font-bold" id="count"> 0 </span>
-            <button class="h-full w-full py-3" id="plus">
+            <span class="text-center font-bold" id="count"> 0 </span>
+            <button class="hover:activeOverlayMedium relative" id="plus">
               <img class="ml-auto" src="images/icon-plus.svg" alt="+" />
             </button>
           </div>
           <div class="w-full" id="add__to__cart">
             <button
-              class="flex w-full items-center justify-center gap-3 rounded-lg bg-[var(--Orange)] py-3 text-sm font-bold"
+              class="hover:activeOverlayMedium relative flex w-full items-center justify-center gap-3 rounded-lg bg-[var(--Orange)] py-3 text-sm font-bold"
             >
               <div class="card__icon">
                 <img

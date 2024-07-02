@@ -7,6 +7,9 @@ const currentSlideContainer = document.querySelectorAll(
 const viewerControlButtons = document.querySelectorAll(
   "button#next,button#previous",
 );
+const cartControlButtons = document.querySelectorAll(
+  "button#plus, button#minus",
+);
 let currentActiveSlide = "slide__1";
 
 const setCurrentActiveSlideImage = (slideNumber) => {
@@ -24,13 +27,25 @@ const changeImage = (slideNumber) => {
 
 const toggleActiveClass = (elementArray) => {
   elementArray.forEach((element) => {
-    element.classList.add("active");
+    element.classList.add("activeSlide");
+    element.classList.add("activeOverlay");
   });
   slides.forEach((slide) => {
     if (slide.id !== currentActiveSlide) {
-      slide.classList.remove("active");
+      slide.classList.remove("activeSlide");
+      slide.classList.remove("activeOverlay");
     }
   });
+};
+
+const editCartCount = (amount) => {
+  const cartCount = document.querySelectorAll("span#count");
+  // TODO: Implement logic to edit cart count
+  cartCount.forEach((count) => {
+    let currentCount = Number(count.textContent)
+    if (currentCount === 0 && amount < 0) return
+    count.textContent = currentCount + amount;
+  })
 };
 
 slides.forEach((slide) => {
@@ -50,5 +65,12 @@ viewerControlButtons.forEach((button) => {
       if (activeSlideNumber === 1) return changeImage(4);
       changeImage(activeSlideNumber - 1);
     }
+  });
+});
+
+cartControlButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (button.id === "plus") editCartCount(1);
+    else if (button.id === "minus") editCartCount(-1);
   });
 });

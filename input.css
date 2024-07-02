@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --Orange: hsl(26, 100%, 55%);
+  --Paleorange: hsl(25, 100%, 94%);
+  --Verydarkblue: hsl(220, 13%, 13%);
+  --Darkgrayishblue: hsl(219, 9%, 45%);
+  --Grayishblue: hsl(220, 14%, 75%);
+  --Lightgrayishblue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Kumbh Sans";
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+}
+
+@layer utilities {
+  .activeSlide {
+    @apply relative border-[2.5px] border-[var(--Orange)];
+  }
+
+  .activeOverlay::before {
+    content: "";
+    @apply absolute left-0 top-0 z-50 h-full w-full bg-white;
+    opacity: 0.65 !important;
+  }
+
+  .activeOverlayMedium::before {
+    content: "";
+    @apply absolute left-0 top-0 z-50 h-full w-full bg-white opacity-25;
+  }
+}
+
+div#routes > ul > li::before {
+  content: "";
+  @apply absolute bottom-0 h-1 w-0 bg-[var(--Orange)] transition-all;
+}
+div#routes > ul > li:hover:before {
+  content: "";
+  @apply w-full opacity-100;
+}

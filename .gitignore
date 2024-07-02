@@ -8,8 +8,6 @@ style-guide.md
 .DS_Store
 node_modules
 tailwind.config.js
-input.css
 *.json
 .prettierrc
-.gitignore
 .prettierignore
